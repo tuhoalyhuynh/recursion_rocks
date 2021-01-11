@@ -5,7 +5,13 @@
 
 def reverse(ss):
     # Write code here
-    pass
+    if type(ss) != str:
+        raise TypeError('Value must be a string')
+
+    if len(ss) <= 1:
+        return ss
+    else:
+        return ss[-1] + reverse(ss[:-1])
 
 # print(reverse("")) 
 # => ""
@@ -15,5 +21,5 @@ def reverse(ss):
 # => "ba"
 # print(reverse("computer")) 
 # => "retupmoc"
-# print(reverse(reverse("computer"))) 
+print(reverse(reverse("computer"))) 
 # => "computer"
